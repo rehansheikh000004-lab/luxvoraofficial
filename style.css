@@ -342,3 +342,24 @@ body.light #scrollTopBtn:hover {
 body.light #particles {
   background: #f5f6fa; /* fallback for light mode */
 }
+
+/* Typing effect style */
+#typing {
+  border-right: 2px solid #f39c12; /* orange cursor */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: blink 0.7s infinite;
+}
+
+/* Cursor blinking */
+@keyframes blink {
+  0% { border-color: transparent; }
+  50% { border-color: #f39c12; }
+  100% { border-color: transparent; }
+}
+
+/* Light mode cursor */
+body.light #typing {
+  border-color: #2c3e50;
+}
