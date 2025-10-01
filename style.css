@@ -46,9 +46,33 @@ body.light .logo {
   text-decoration: none;
   transition: 0.3s;
 }
-.btn:hover {
-  background: #111;
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f39c12, #e67e22);
   color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(243, 156, 18, 0.6);
+}
+
+/* Hover Neon Glow */
+.btn:hover {
+  box-shadow: 0 0 15px #f39c12, 0 0 30px #f39c12, 0 0 45px #f39c12;
+  transform: scale(1.05);
+}
+
+/* Light Mode Instagram Button */
+body.light .btn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+}
+
+body.light .btn:hover {
+  box-shadow: 0 0 15px #3498db, 0 0 30px #3498db, 0 0 45px #3498db;
 }
 
 nav {
