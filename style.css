@@ -272,3 +272,18 @@ body.light #scrollTopBtn {
 body.light #scrollTopBtn:hover {
   background: #2980b9;
 }
+
+/* Particles Background */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* keeps particles behind all content */
+  background: #111; /* fallback for dark mode */
+}
+
+body.light #particles {
+  background: #f5f6fa; /* fallback for light mode */
+}
