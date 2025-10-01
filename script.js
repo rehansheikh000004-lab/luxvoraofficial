@@ -26,17 +26,29 @@ function toggleTheme() {
 // ✨ Scroll Reveal Animation
 function revealOnScroll() {
   const reveals = document.querySelectorAll(".reveal");
-
   reveals.forEach(el => {
     const windowHeight = window.innerHeight;
     const revealTop = el.getBoundingClientRect().top;
-    const revealPoint = 100; // trigger when 100px visible
-
+    const revealPoint = 100;
     if (revealTop < windowHeight - revealPoint) {
       el.classList.add("active");
     }
   });
 }
-
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
+// ⬆ Scroll To Top Button
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
