@@ -29,9 +29,10 @@ body.light .logo {
 
 .tagline {
   font-size: 1.2rem;
-  margin-top: 0.5rem;
-  color: #ecf0f1;  /* light gray in dark mode */
-  letter-spacing: 1px;
+  margin: 0.5rem 0 1rem 0;
+  font-weight: 400;
+  opacity: 0.9;
+  min-height: 30px; /* prevent layout shift while typing */
 }
 
 /* Light mode fix */
