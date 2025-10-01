@@ -158,6 +158,18 @@ body.light .project-links button:hover {
   background: #2980b9;
 }
 
+/* Fade-in up animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 body.light footer {
   background: #3498db;
   color: white;
