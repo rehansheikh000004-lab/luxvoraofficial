@@ -1,43 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luxvora Official</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1 class="title">Luxvora Official</h1>
-    <p class="subtitle">Web Developer | Creator | Innovator</p>
-    <a class="btn" href="https://instagram.com/luxvoraofficial" target="_blank">📸 Follow on Instagram</a>
+    <h1 class="logo">Luxvora Official</h1>
+    <p class="tagline">Web Developer • Creator • Innovator</p>
+    <a href="https://instagram.com/luxvoraofficial" target="_blank" class="btn">📸 Instagram</a>
   </header>
 
+  <!-- Navigation -->
+  <nav>
+    <button onclick="showTab('home')">Home</button>
+    <button onclick="showTab('projects')">Projects</button>
+    <button onclick="showTab('about')">About</button>
+    <button onclick="showTab('contact')">Contact</button>
+  </nav>
+
+  <!-- Tabs -->
   <main>
-    <section id="projects">
-      <h2>🚀 Projects</h2>
-      <ul>
-        <li><a href="quote.html">✨ Quote Generator</a></li>
-      </ul>
+    <!-- Home -->
+    <section id="home" class="tab active">
+      <h2>✨ Welcome</h2>
+      <p>Hi 👋 I’m <b>Rehan Sheikh</b>.  
+      I’m on my journey to becoming a <b>Full Stack Web Developer</b>.  
+      This site showcases my projects and growth 🚀</p>
     </section>
 
-    <section id="about">
+    <!-- Projects -->
+    <section id="projects" class="tab">
+      <h2>🚀 My Projects</h2>
+      <div class="project-links">
+        <button onclick="loadProject('quote')">✨ Quote Generator</button>
+        <button onclick="loadProject('todo')">📝 To-Do List</button>
+        <button onclick="loadProject('calculator')">🧮 Calculator</button>
+      </div>
+      <iframe id="projectFrame" src="" frameborder="0"></iframe>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="tab">
       <h2>👨‍💻 About Me</h2>
-      <p>
-        Hi 👋 I’m <b>Rehan Sheikh</b>.  
-        I am a <b>Full Stack Web Development</b>.  
-        This portfolio showcases my journey and projects.
-      </p>
+      <p>I am passionate about coding, creating modern websites, and building digital tools.  
+      Currently I am learning <b>Full Stack Web Development</b> and experimenting with HTML, CSS, JS, and more.</p>
     </section>
 
-    <section id="contact">
+    <!-- Contact -->
+    <section id="contact" class="tab">
       <h2>📩 Contact</h2>
       <p>Email: <a href="mailto:luxvoraofficial@gmail.com">luxvoraofficial@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/luxvoraofficial" target="_blank">@luxvoraofficial</a></p>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Luxvora Official | Built with 💻 by Rehan Sheikh</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
