@@ -54,33 +54,33 @@ function scrollToTop() {
 }
 
 // ✨ Typing Animation
-const typingElement = document.getElementById("typing");
-const words = ["Web Developer", "Creator", "Innovator"];
-let wordIndex = 0;
+const roles = ["Web Developer", "Innovator", "Creator"];
+let roleIndex = 0;
 let charIndex = 0;
-let isDeleting = false;
+let typingElement = document.getElementById("typing");
 
 function typeEffect() {
-  const currentWord = words[wordIndex];
-  if (isDeleting) {
-    typingElement.textContent = currentWord.substring(0, charIndex--);
+  if (charIndex < roles[roleIndex].length) {
+    typingElement.textContent += roles[roleIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, 100);
   } else {
-    typingElement.textContent = currentWord.substring(0, charIndex++);
+    setTimeout(eraseEffect, 1500);
   }
-
-  let typingSpeed = isDeleting ? 80 : 120;
-
-  if (!isDeleting && charIndex === currentWord.length) {
-    typingSpeed = 1500; // pause at end of word
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    wordIndex = (wordIndex + 1) % words.length;
-    typingSpeed = 500;
-  }
-
-  setTimeout(typeEffect, typingSpeed);
 }
 
-// start typing when page loads
-document.addEventListener("DOMContentLoaded", typeEffect);
+function eraseEffect() {
+  if (charIndex > 0) {
+    typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseEffect, 50);
+  } else {
+    roleIndex = (roleIndex + 1) % roles.length;
+    setTimeout(typeEffect, 500);
+  }
+}
+
+// Start typing on page load
+document.addEventListener("DOMContentLoaded", () => {
+  typeEffect();
+});
