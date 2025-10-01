@@ -85,7 +85,7 @@ function typeEffect() {
 // start typing when page loads
 document.addEventListener("DOMContentLoaded", typeEffect);
 
-// ✨ Interactive Particle Network Background
+// ✨ Particle Network Background
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
@@ -93,16 +93,6 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particlesArray = [];
-let mouse = {
-  x: null,
-  y: null,
-  radius: 120 // attraction radius
-};
-
-window.addEventListener("mousemove", (event) => {
-  mouse.x = event.x;
-  mouse.y = event.y;
-});
 
 class Particle {
   constructor() {
@@ -112,7 +102,6 @@ class Particle {
     this.speedX = (Math.random() - 0.5) * 1.2;
     this.speedY = (Math.random() - 0.5) * 1.2;
   }
-
   update() {
     this.x += this.speedX;
     this.y += this.speedY;
@@ -120,18 +109,7 @@ class Particle {
     // bounce off edges
     if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
     if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-
-    // mouse interaction (attraction)
-    let dx = mouse.x - this.x;
-    let dy = mouse.y - this.y;
-    let distance = Math.sqrt(dx * dx + dy * dy);
-
-    if (distance < mouse.radius) {
-      this.x -= dx / 20; 
-      this.y -= dy / 20; 
-    }
   }
-
   draw() {
     ctx.fillStyle = "rgba(243,156,18,0.8)"; // glowing orange
     ctx.beginPath();
@@ -156,7 +134,7 @@ function connectParticles() {
       let dy = particlesArray[a].y - particlesArray[b].y;
       let distance = Math.sqrt(dx * dx + dy * dy);
 
-      if (distance < 120) {
+      if (distance < 120) { // max distance to connect
         ctx.strokeStyle = "rgba(243,156,18,0.2)";
         ctx.lineWidth = 1;
         ctx.beginPath();
@@ -174,7 +152,7 @@ function animateParticles() {
     p.update();
     p.draw();
   });
-  connectParticles();
+  connectParticles(); // draw network connections
   requestAnimationFrame(animateParticles);
 }
 
@@ -186,10 +164,4 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   initParticles();
-});
-
-// reset mouse if cursor leaves screen
-window.addEventListener("mouseout", () => {
-  mouse.x = null;
-  mouse.y = null;
 });
