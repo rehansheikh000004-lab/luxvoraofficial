@@ -193,4 +193,3 @@ window.addEventListener("mouseout", () => {
   mouse.x = null;
   mouse.y = null;
 });
-});
