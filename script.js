@@ -188,6 +188,36 @@ window.addEventListener("resize", () => {
   initParticles();
 });
 
+const roles = ["Web Developer", "Innovator", "Creator"];
+let roleIndex = 0;
+let charIndex = 0;
+let typingElement = document.getElementById("typing");
+
+function typeEffect() {
+  if (charIndex < roles[roleIndex].length) {
+    typingElement.textContent += roles[roleIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, 100);
+  } else {
+    setTimeout(eraseEffect, 1500);
+  }
+}
+
+function eraseEffect() {
+  if (charIndex > 0) {
+    typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseEffect, 50);
+  } else {
+    roleIndex = (roleIndex + 1) % roles.length;
+    setTimeout(typeEffect, 500);
+  }
+}
+
+// Start typing on page load
+document.addEventListener("DOMContentLoaded", () => {
+  typeEffect();
+});
 // reset mouse if cursor leaves screen
 window.addEventListener("mouseout", () => {
   mouse.x = null;
