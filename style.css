@@ -112,3 +112,53 @@ footer {
   border-radius: 30px 30px 0 0;
   margin-top: 2rem;
 }
+
+/* 🌙 DARK THEME (default) */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+  color: #eee;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* ☀️ LIGHT THEME */
+body.light {
+  background: linear-gradient(135deg, #ffffff, #f4f4f4);
+  color: #222;
+}
+
+body.light header {
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  color: white;
+}
+
+body.light nav button {
+  border: 2px solid #3498db;
+  color: #3498db;
+}
+body.light nav button:hover {
+  background: #3498db;
+  color: white;
+}
+
+body.light .btn {
+  background: black;
+  color: white;
+}
+body.light .btn:hover {
+  background: #3498db;
+}
+
+body.light .project-links button {
+  background: #3498db;
+  color: white;
+}
+body.light .project-links button:hover {
+  background: #2980b9;
+}
+
+body.light footer {
+  background: #3498db;
+  color: white;
+}
