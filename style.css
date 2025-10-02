@@ -133,25 +133,29 @@ iframe {
   box-shadow: 0 0 10px #000;
 }
 
-/* Footer text styling */
-.footer-text {
-  text-align: center;
+footer {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically if footer has height */
   padding: 15px;
-  font-size: 0.9rem;
-  color: #ecf0f1; /* light for dark mode */
-  letter-spacing: 1px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  cursor: default;
 }
 
-/* Light mode fix */
+.footer-text {
+  font-size: 0.9rem;
+  color: #ecf0f1; /* default for dark mode */
+  text-align: center;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Light mode text */
 body.light .footer-text {
-  color: #2c3e50; /* dark for light mode */
+  color: #2c3e50;
 }
 
 /* Hover effect */
 .footer-text:hover {
-  color: #f39c12; /* gold accent */
+  color: #f39c12;
   text-shadow: 0 0 8px rgba(243, 156, 18, 0.6);
   cursor: pointer;
 }
