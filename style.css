@@ -364,6 +364,100 @@ body.light #particles {
   100% { border-color: transparent; }
 }
 
+/* Common Container */
+.app-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Headings */
+.app-container h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  width: 70%;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+input:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
+}
+
+/* Quote Text */
+.quote {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 15px 0;
+  color: var(--text-color);
+}
+
+/* To-do List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+ul li {
+  background: rgba(255, 255, 255, 0.2);
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Light/Dark Mode Support */
+body.dark {
+  --heading-color: #f8f9fa;
+  --text-color: #e0e0e0;
+}
+body.light {
+  --heading-color: #2c3e50;
+  --text-color: #333;
+}
+
 /* Light mode cursor */
 body.light #typing {
   border-color: #2c3e50;
