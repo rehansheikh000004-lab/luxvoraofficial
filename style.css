@@ -44,17 +44,6 @@ body.light .tagline {
   display: inline-block;
   margin-top: 1rem;
   padding: 10px 20px;
-  border-radius: 25px;
-  background: white;
-  color: #e74c3c;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 10px 20px;
   border-radius: 30px;
   background: linear-gradient(135deg, #f39c12, #e67e22);
   color: white;
