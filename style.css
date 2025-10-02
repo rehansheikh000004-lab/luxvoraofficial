@@ -462,3 +462,17 @@ body.light {
 body.light #typing {
   border-color: #2c3e50;
 }
+
+/* Footer text styling */
+.footer-text {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #ecf0f1; /* light gray/white for dark mode */
+  letter-spacing: 1px;
+}
+
+/* Light mode fix */
+body.light .footer-text {
+  color: #2c3e50; /* dark gray/blue for light mode */
+}
