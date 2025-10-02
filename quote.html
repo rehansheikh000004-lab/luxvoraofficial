@@ -11,23 +11,24 @@
   </style>
 </head>
 <body>
-  <h1>✨ Random Quote Generator</h1>
-  <p id="quote">Click the button to get a quote</p>
-  <button onclick="generateQuote()">New Quote</button>
+  <div class="app-container">
+  <h1>✨ Daily Quote ✨</h1>
+  <p class="quote" id="quote">Click the button to get inspired!</p>
+  <button onclick="newQuote()">Get Quote</button>
+</div>
 
-  <script>
-    const quotes = [
-      "Believe in yourself!",
-      "Push harder than yesterday!",
-      "Dream big, work hard!",
-      "Your only limit is you.",
-      "Stay positive, work hard, make it happen."
-    ];
+<script>
+  const quotes = [
+    "Dream big. Start small. Act now.",
+    "Success is not final, failure is not fatal.",
+    "Hustle in silence, let your success speak.",
+    "Consistency is the key to greatness."
+  ];
 
-    function generateQuote() {
-      const randomIndex = Math.floor(Math.random() * quotes.length);
-      document.getElementById("quote").innerText = quotes[randomIndex];
-    }
-  </script>
+  function newQuote() {
+    const random = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").innerText = quotes[random];
+  }
+</script>
 </body>
 </html>
