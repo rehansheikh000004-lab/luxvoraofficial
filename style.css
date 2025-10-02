@@ -462,3 +462,54 @@ body.light {
 body.light #typing {
   border-color: #2c3e50;
 }
+
+/* Page Title */
+.projects-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 30px;
+  color: var(--heading-color);
+}
+.subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  color: var(--text-color);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* Emoji Icons */
+.card h2 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: var(--heading-color);
+}
+.card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
