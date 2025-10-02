@@ -144,12 +144,27 @@ iframe {
   box-shadow: 0 0 10px #000;
 }
 
-footer {
+/* Footer text styling */
+.footer-text {
   text-align: center;
-  padding: 1rem;
-  background: #111;
-  border-radius: 30px 30px 0 0;
-  margin-top: 2rem;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #ecf0f1; /* light for dark mode */
+  letter-spacing: 1px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: default;
+}
+
+/* Light mode fix */
+body.light .footer-text {
+  color: #2c3e50; /* dark for light mode */
+}
+
+/* Hover effect */
+.footer-text:hover {
+  color: #f39c12; /* gold accent */
+  text-shadow: 0 0 8px rgba(243, 156, 18, 0.6);
+  cursor: pointer;
 }
 
 /* 🌙 DARK THEME (default) */
@@ -461,18 +476,4 @@ body.light {
 /* Light mode cursor */
 body.light #typing {
   border-color: #2c3e50;
-}
-
-/* Footer text styling */
-.footer-text {
-  text-align: center;
-  padding: 15px;
-  font-size: 0.9rem;
-  color: #ecf0f1; /* light gray/white for dark mode */
-  letter-spacing: 1px;
-}
-
-/* Light mode fix */
-body.light .footer-text {
-  color: #2c3e50; /* dark gray/blue for light mode */
 }
